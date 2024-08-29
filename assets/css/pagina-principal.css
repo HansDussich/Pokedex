@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: rgb(61,98,105);
+    background: linear-gradient(180deg, rgba(61,98,105,1) 0%, rgba(70,117,125,1) 35%, rgba(191,230,222,1) 100%);    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+main{
+    display: flex;
+    margin: 20px;
+}
+
+
+.poke-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.pokemon {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.pokemon .info {
+    padding: 10px;
+}
+
+.number{
+    font-size: 15px;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+
+}
+.name{
+    font-size: 20px;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.type{
+    font-size: 18px;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+
+}
