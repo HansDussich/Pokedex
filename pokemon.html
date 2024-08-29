@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="/assets/css/pokemon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    
+
+</head>
+
+<body>
+ 
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/pagina-principal.html">
+                    <img src="/assets/image/image (4).png" alt="logo pokemon" width="30" height="30" class="d-inline-block align-text-top">
+                    POKEDEX
+                </a>
+                
+                <form action="" class="d-flex">
+                    <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-info" type="Search">Buscar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <div class="rounded-rectangle">
+            <div class="pokemon-image-container">
+                <img class="pokemon-image" src="/assets/image/1.png" alt="Pokémon 001">
+            </div>
+            <div class="top-section">
+                <p style="font-size: 32px; margin: 0; margin-top: 20px;">Bulbasaur</p>
+                <p style="font-size: 16px; margin: 0;">No.001</p>
+            </div>
+            <div class="middle-section">
+                <button class="boton-pildora boton-grass" style="font-size: 16px;">Grass</button>
+                <button class="boton-pildora boton-poison" style="font-size: 16px;">Poison</button>
+            </div>
+            <div class="lower-middle-section">
+                <p style="margin: 16px; font-size: 24px;">Height: 0.7m</p>
+                <p style="margin: 16px; font-size: 24px;">Weight: 6.9kg</p>
+            </div>
+            <div class="bottom-section" style="margin: 8px; font-size: 24px;">
+                <p>While it is young, it uses the nutrients that are stored in the seed on its back in order to grow.
+                </p>
+            </div>
+        </div>
+        <div class="info-container">
+            <div class="info-header">
+                <button class="pill-button">Statistics</button>
+                <button class="pill-button">Moves</button>
+                <button class="pill-button">Encounters</button>
+            </div>
+            <div class="info-main">
+                <div class="info-main-left">
+                    <table>
+                        <tr>
+                            <td>HP</td>
+                        </tr>
+                        <tr>
+                            <td>Attack</td>
+                        </tr>
+                        <tr>
+                            <td>Defense</td>
+                        </tr>
+                        <tr>
+                            <td>Sp. ATK</td>
+                        </tr>
+                        <tr>
+                            <td>Sp. Def</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="info-main-center">
+                    <table>
+                        <tr>
+                            <td>55</td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="info-main-right">
+                    <div class="bar-container">
+                        <div class="bar" style="width: 46%;"></div>
+                        <div class="bar" style="width: 46%;"></div>
+                        <div class="bar" style="width: 33%;"></div>
+                        <div class="bar" style="width: 55%;"></div>
+                        <div class="bar" style="width: 44%;"></div>
+                        <div class="bar" style="width: 34%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-bottom-title">
+                <p id="info-bottom-title-font">Habilidades/Talento</p>
+            </div>
+            <div class="info-bottom">
+                <div class="info-bottom-top">
+                    <div class="info-bottom-mensaje">
+                        <div class="info-bottom-mensaje-top">
+                            <div class="pildora">Overgrow</div>
+                        </div>
+                        <div class="info-bottom-mensaje-button">
+                            <p>When the Pokémon's HP is low, the power of Grass-type moves goes up.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-bottom-bottom">
+                    <div class="info-bottom-mensaje">
+                        <div class="info-bottom-mensaje-top">
+                            <div class="pildora">Chlorophyll</div>
+                        </div>
+                        <div class="info-bottom-mensaje-button">
+                            <p>Boosts the Pokémon's Speed stat in harsh sunlight.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-bottom-title-buttom ">
+                <p id="info-bottom-title-font">Tipos Efectivos</p>
+            </div>
+            <div class="info-footer">
+                <button class="boton-pildora-abajo-black boton-white  Nombres-Botones_pildora" style="font-size: 16px;
+                margin-top: 3vh;
+                margin-right: 0vh;
+                margin-left: 3vh;">1/2x</button>
+                <button class="boton-pildora-abajo boton-fighting Nombres-Botones_pildora">Fighting</button>
+                <button class="boton-pildora-abajo boton-water Nombres-Botones_pildora">Water</button>
+                <button class="boton-pildora-abajo boton-electric Nombres-Botones_pildora">Electric</button>
+                <button class="boton-pildora-abajo boton-fairy Nombres-Botones_pildora">Fairy</button>
+            </div>
+        </div>
+    </main>
+<!-- 
+     Flechas laterales 
+    <div class="arrow arrow-left">
+        <i class="fa-solid fa-arrow-left"></i>
+    </div>
+    <div class="arrow arrow-right">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div> 
+ -->
+   
+ 
+    <footer>
+        <p>Creado por mi</p>
+    </footer>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
