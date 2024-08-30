@@ -5,58 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
-    <link rel="stylesheet" href="/assets/css/pokemon.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    
-
+    <style>
+        /* Agrega estilos aquí si es necesario */
+    </style>
 </head>
 
 <body>
- 
     <header>
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/pagina-principal.html">
-                    <img src="/assets/image/image (4).png" alt="logo pokemon" width="30" height="30" class="d-inline-block align-text-top">
-                    POKEDEX
-                </a>
-                
-                <form action="" class="d-flex">
-                    <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-info" type="Search">Buscar</button>
-                </form>
+        <nav class="header-nav">
+            <div class="pokeball-container">
+                <img class="pokeball-image" src="assets/css/images/image (4).png" alt="Pokéball">
+            </div>
+            <p class="page-title">Pokédex</p>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Buscar...">
+                <button class="search-button">Buscar</button>
             </div>
         </nav>
     </header>
-
-
-
     <main>
-        <div class="rounded-rectangle">
+        <section class="rounded-rectangle">
             <div class="pokemon-image-container">
-                <img class="pokemon-image" src="/assets/image/1.png" alt="Pokémon 001">
+                <img class="pokemon-image" src="/assets/css/images/1.png" alt="Pokémon 001">
             </div>
             <div class="top-section">
-                <p style="font-size: 32px; margin: 0; margin-top: 20px;">Bulbasaur</p>
-                <p style="font-size: 16px; margin: 0;">No.001</p>
+                <div>
+                    <p style="font-size: 3vh; margin: 0; margin-top: 2vh;">Bulbasaur</p>
+                </div>
+                <div>
+                    <p style="font-size: 2vh; margin: 0;">No.001</p>
+                </div>
             </div>
             <div class="middle-section">
-                <button class="boton-pildora boton-grass" style="font-size: 16px;">Grass</button>
-                <button class="boton-pildora boton-poison" style="font-size: 16px;">Poison</button>
+                <button class="boton-pildora boton-grass" id="color-pildora">Grass</button>
+                <button class="boton-pildora boton-poison" id="color-pildora">Poison</button>
             </div>
             <div class="lower-middle-section">
-                <p style="margin: 16px; font-size: 24px;">Height: 0.7m</p>
-                <p style="margin: 16px; font-size: 24px;">Weight: 6.9kg</p>
+                <p style="margin: 1.5vh; font-size: 3vh;">Height: 0.7m</p>
+                <p style="margin: 1.5vh; font-size: 3vh;">Weight: 6.9kg</p>
             </div>
-            <div class="bottom-section" style="margin: 8px; font-size: 24px;">
-                <p>While it is young, it uses the nutrients that are stored in the seed on its back in order to grow.
+            <div class="bottom-section" style="margin: 0.8vh; font-size: 3vh;">
+                <p>Mientras es joven, utiliza los nutrientes que se almacenan en la semilla que tiene en la espalda para poder crecer.
                 </p>
             </div>
-        </div>
-        <div class="info-container">
+        </section>
+        <section class="info-container">
             <div class="info-header">
                 <button class="pill-button">Statistics</button>
                 <button class="pill-button">Moves</button>
@@ -147,38 +142,22 @@
                 <p id="info-bottom-title-font">Tipos Efectivos</p>
             </div>
             <div class="info-footer">
-                <button class="boton-pildora-abajo-black boton-white  Nombres-Botones_pildora" style="font-size: 16px;
-                margin-top: 3vh;
-                margin-right: 0vh;
-                margin-left: 3vh;">1/2x</button>
-                <button class="boton-pildora-abajo boton-fighting Nombres-Botones_pildora">Fighting</button>
-                <button class="boton-pildora-abajo boton-water Nombres-Botones_pildora">Water</button>
-                <button class="boton-pildora-abajo boton-electric Nombres-Botones_pildora">Electric</button>
-                <button class="boton-pildora-abajo boton-fairy Nombres-Botones_pildora">Fairy</button>
+                <button class="boton-pildora boton-grass">1/2x</button>
+                <button class="boton-pildora boton-grass">Fighting</button>
+                <button class="boton-pildora boton-grass">Water</button>
+                <button class="boton-pildora boton-grass">Electric</button>
+                <button class="boton-pildora boton-grass">Fairy</button>
             </div>
-        </div>
+        </section>
     </main>
-<!-- 
-     Flechas laterales 
+
+    <!-- Flechas laterales -->
     <div class="arrow arrow-left">
         <i class="fa-solid fa-arrow-left"></i>
     </div>
     <div class="arrow arrow-right">
         <i class="fa-solid fa-arrow-right"></i>
-    </div> 
- -->
-   
- 
-    <footer>
-        <p>Creado por mi</p>
-    </footer>
-
-
- 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-
-
+    </div>
 </body>
 
 </html>
