@@ -1,3 +1,143 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+a {
+    color: #000;
+    /* Color personalizado para los enlaces */
+    cursor: default;
+    /* Cambia el cursor a la forma predeterminada */
+    text-decoration: none;
+    /* Elimina el subrayado de los enlaces */
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 html,
@@ -243,7 +383,7 @@ body {
     font-size: 3vh;
     margin-top: 2vh;
     margin-right: 0vh;
-    margin-bottom: 0vh;
+    margin-bottom: 1vw;
     margin-left: 3vh;
     text-align: left;
     flex: 1;
@@ -331,7 +471,7 @@ body {
     /* Alinea el texto a la izquierda */
     padding: 0.5vh;
     margin: 1vh 0;
-    border-radius:1vh;
+    border-radius: 1vh;
     height: 1vh;
     line-height: 1vh;
     /* Alinea verticalmente el texto con la altura de la barra */
@@ -379,25 +519,28 @@ body {
 .boton-poison {
     background-color: #9B59B6;
 }
+
 .boton-white {
-    background-color: #ffffff; 
-    color:black;
- font-size: 3vh;
+    background-color: #ffffff;
+    color: black;
+    font-size: 3vh;
 }
+
 .boton-fighting {
     background-color: #c42d21;
 }
+
 .boton-water {
     background-color: #6c8ef0;
 }
+
 .boton-electric {
     background-color: #f8cf29;
 }
+
 .boton-fairy {
     background-color: #ea9bae;
 }
-
-
 
 .pill-button {
     background-color: hsl(0, 0%, 86%);
@@ -455,6 +598,7 @@ body {
     margin-right: 0vh;
     margin-left: 3vh;
 }
+
 .boton-pildora-abajo {
     padding: 2vh 3vh;
     border-radius: 2vw;
@@ -465,15 +609,54 @@ body {
     text-transform: uppercase;
     margin: 1vh;
 }
+
 .boton-pildora-abajo-black {
     padding: 2vh 3vw;
-  border-radius: 2vw;
-  border: none;
-  color: rgb(0, 0, 0);
-  font-size: 1rem;
-  cursor: pointer;
-  text-transform: uppercase;
+    border-radius: 2vw;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
 }
- #color-pildora{
+
+#color-pildora {
     font-size: 1.5vh;
- }
+}
+
+#Nombre-Pokemon {
+    font-size: 3vh;
+    margin: 0;
+    margin-top: 2vh;
+    font-weight: 900;
+}
+
+#Numero-Pokemon-Pokedex {
+    font-size: 2vh;
+    margin: 0;
+    font-weight: 900;
+    color: oklch(0 0 0 / 0.6);
+}
+
+#Altura-Pokemon-Nombre {
+    margin: 1.5vh;
+    font-size: 3vh;
+}
+
+#Peso-Pokemon-Nombre {
+    margin: 1.5vh;
+    font-size: 3vh;
+}
+#Altura-Pokemon {
+    margin: 1.5vh;
+    font-size: 3vh;
+}
+
+#Peso-Pokemon {
+    margin: 1.5vh;
+    font-size: 3vh;
+}
+#Descripcion-Pokemon{
+    margin: 0.8vh;
+    font-size: 3vh;
+}

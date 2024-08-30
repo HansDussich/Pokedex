@@ -19,11 +19,11 @@
         <nav class="header-nav">
             <div class="pokeball-container">
                 <a class="navbar-brand" href="/pagina-principal.html">
-                    <img src="/assets/image/image (4).png" alt="logo pokemon" width="30" height="30"
+                    <img src="assets/css/images/image (4).png" alt="logo pokemon" width="30" height="30"
                         class="d-inline-block align-text-top">
                 </a>
             </div>
-            <a class="navbar-brand" href="/pagina-principal.html">
+            <a href="/pagina-principal.html">
                 <p class="page-title">Pokédex</p>
             </a>
 
@@ -36,14 +36,15 @@
     <main>
         <section class="rounded-rectangle">
             <div class="pokemon-image-container">
-                <img class="pokemon-image" src="/assets/css/images/1.png" alt="Pokémon 001">
+                <img id="pokemon-image" class="pokemon-image" src="/assets/css/images/1.png" alt="Pokémon ">
+
             </div>
             <div class="top-section">
                 <div>
-                    <p style="font-size: 3vh; margin: 0; margin-top: 2vh;">Bulbasaur</p>
+                    <p id="Nombre-Pokemon">Bulbasaur</p>
                 </div>
                 <div>
-                    <p style="font-size: 2vh; margin: 0;">No.001</p>
+                    <p id="Numero-Pokemon-Pokedex">No.001</p>
                 </div>
             </div>
             <div class="middle-section">
@@ -51,11 +52,17 @@
                 <button class="boton-pildora boton-poison" id="color-pildora">Poison</button>
             </div>
             <div class="lower-middle-section">
-                <p style="margin: 1.5vh; font-size: 3vh;">Height: 0.7m</p>
-                <p style="margin: 1.5vh; font-size: 3vh;">Weight: 6.9kg</p>
+                <div>
+                    <p id="Altura-Pokemon-Nombre">Altura: </p>
+                    <p id="Altura-Pokemon"></p>
+                </div>
+                <div>
+                    <p id="Peso-Pokemon-Nombre">Peso: </p>
+                    <p id="Peso-Pokemon"></p>
+                </div>
             </div>
-            <div class="bottom-section" style="margin: 0.8vh; font-size: 3vh;">
-                <p>Mientras es joven, utiliza los nutrientes que se almacenan en la semilla que tiene en la espalda para
+            <div class="bottom-section">
+                <p id="Descripcion-Pokemon">Mientras es joven, utiliza los nutrientes que se almacenan en la semilla que tiene en la espalda para
                     poder crecer.
                 </p>
             </div>
