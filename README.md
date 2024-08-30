@@ -1,6 +1,9 @@
 
-Pokedex usando Bootstrap y Angular
+# Pokédex Virtual usando Bootstrap y Angular
 
+## Descripción
+
+La **Pokédex Virtual** es una aplicación web que permite a los usuarios explorar una base de datos de Pokémon. Los usuarios pueden ver una lista de todos los Pokémon disponibles y seleccionar uno específico para obtener más detalles. La aplicación está diseñada para ser responsive, por lo que se adapta bien a dispositivos móviles.
 ----------------------------------------------------------------------------------------------------------------
 
 ![imagen](https://github.com/user-attachments/assets/873632ef-3b95-42cf-88ad-ede07489db6b)
@@ -8,13 +11,6 @@ Pokedex usando Bootstrap y Angular
 ------------------------------------------------------------------------------------------------------------------
 
 ![pokedex mockup](https://github.com/user-attachments/assets/4e347e3e-8c20-4704-9ec4-05980eb41cd3)
-
-# Pokédex Virtual
-
-## Descripción
-
-La **Pokédex Virtual** es una aplicación web que permite a los usuarios explorar una base de datos de Pokémon. Los usuarios pueden ver una lista de todos los Pokémon disponibles y seleccionar uno específico para obtener más detalles. La aplicación está diseñada para ser responsive, por lo que se adapta bien a dispositivos móviles.
-
 ## Tecnologías Utilizadas
 
 - **Frontend**: HTML5, CSS3
