@@ -3,14 +3,18 @@
 
 
 body {
-    font-family: "Roboto", sans-serif;
-    background: rgb(61,98,105);
-    background: linear-gradient(180deg, rgba(61,98,105,1) 0%, rgba(70,117,125,1) 35%, rgba(191,230,222,1) 100%);    margin: 0;
+    background: linear-gradient(135deg, 
+        #2C3E50 0%, /* Azul oscuro */
+        #4CA1AF 50%, /* Azul claro */
+        #A2C2E0 100% /* Azul pálido */
+    );
+    color: #FFF;
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 0;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
+
+
 main{
     display: flex;
     margin: 20px;
