@@ -255,8 +255,9 @@ body {
 }
 
 .pokemon-image {
-    max-width: 90%;
+    max-width: 100%;
     object-fit: contain;
+    height: 37vw;
 }
 
 .top-section {
@@ -649,7 +650,7 @@ body {
 }
 #Altura-Pokemon {
     margin: 1.5vh;
-    font-size: 3vh;
+    font-size: 3vh;s
 }
 
 #Peso-Pokemon {
@@ -659,4 +660,8 @@ body {
 #Descripcion-Pokemon{
     margin: 0.8vh;
     font-size: 3vh;
+}
+.imagen-nav{
+    height: 100%;
+    width: 4vw;
 }
