@@ -6,7 +6,8 @@
 La **Pokédex Virtual** es una aplicación web que permite a los usuarios explorar una base de datos de Pokémon. Los usuarios pueden ver una lista de todos los Pokémon disponibles y seleccionar uno específico para obtener más detalles. La aplicación está diseñada para ser responsive, por lo que se adapta bien a dispositivos móviles.
 ----------------------------------------------------------------------------------------------------------------
 
-![imagen](https://github.com/user-attachments/assets/873632ef-3b95-42cf-88ad-ede07489db6b)
+![imagen](https://github.com/user-attachments/assets/b6e85652-1465-4012-9735-7aed3c6b7574)
+
 
 ------------------------------------------------------------------------------------------------------------------
 
