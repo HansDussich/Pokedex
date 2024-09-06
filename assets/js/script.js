@@ -1,29 +1,26 @@
 // Definición de colores para cada tipo de Pokémon con la paleta proporcionada
 const colores = {
-    normal: '#F5F5F5', // Gris muy claro
-    fighting: '#F28C6F', // Coral suave
-    flying: '#D5A6BD', // Rosa pálido
-    poison: '#D6A1B1', // Rosa pálido
-    ground: '#F7B7A3', // Naranja pastel
-    rock: '#D5B8A1', // Beige claro
-    bug: '#C2D6A1', // Verde claro
-    ghost: '#D0A8D3', // Lavanda claro
-    steel: '#D0D0D0', // Gris neutro
-    fire: '#F5A97B', // Naranja claro
-    water: '#A3C8E4', // Azul pastel
-    grass: '#A8D5A2', // Verde suave
-    electric: '#F9E58F', // Amarillo pastel
-    psychic: '#F8BBD0', // Rosa suave
-    ice: '#A2D8E0', // Azul pálido
-    dragon: '#C8A2D8', // Púrpura claro
-    dark: '#6E6E6E', // Gris oscuro
-    fairy: '#F6C1C0', // Rosa claro
-    unknown: '#FFEBE8', // Rosa pálido con opacidad
-    shadow: '#3A4D6E' // Azul grisáceo
+    normal: '#F5F5F5', 
+    fighting: '#F28C6F',
+    flying: '#D5A6BD', 
+    poison: '#D6A1B1', 
+    ground: '#F7B7A3', 
+    rock: '#D5B8A1', 
+    bug: '#C2D6A1', 
+    ghost: '#D0A8D3',
+    steel: '#D0D0D0', 
+    fire: '#F5A97B', 
+    water: '#A3C8E4',
+    grass: '#A8D5A2', 
+    electric: '#F9E58F',
+    psychic: '#F8BBD0', 
+    ice: '#A2D8E0', 
+    dragon: '#C8A2D8', 
+    dark: '#6E6E6E', 
+    fairy: '#F6C1C0', 
+    unknown: '#FFEBE8',
+    shadow: '#3A4D6E' 
 };
-
-
-
 
 // Obtiene una lista de todos los tipos de Pokémon
 const tipoPokemones = Object.keys(colores);
