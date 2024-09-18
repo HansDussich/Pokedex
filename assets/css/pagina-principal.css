@@ -37,8 +37,8 @@ main{
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
+    color: hsl(0, 0%, 100%);
+    font-family: "Roboto", sans-serif;
 }
 
 .pokemon .info {
