@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores con Degradado</title>
+    <style>
+        /* Estilo básico para los elementos */
+        .elemento {
+            width: 200px; /* Ancho del cuadro */
+            height: 200px; /* Altura del cuadro */
+            margin: 20px; /* Margen entre cuadros */
+            border-radius: 10px; /* Bordes redondeados */
+            display: inline-block; /* Mostrar en línea */
+            color: white; /* Color del texto */
+            text-align: center; /* Centra el texto horizontalmente */
+            line-height: 200px; /* Centra el texto verticalmente */
+            font-size: 18px; /* Tamaño de la fuente */
+            font-weight: bold; /* Negrita */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="elemento" id="normal">Normal</div>
+    <div class="elemento" id="fighting">Fighting</div>
+    <div class="elemento" id="flying">Flying</div>
+    <div class="elemento" id="poison">Poison</div>
+    <div class="elemento" id="ground">Ground</div>
+    <div class="elemento" id="rock">Rock</div>
+    <div class="elemento" id="bug">Bug</div>
+    <div class="elemento" id="ghost">Ghost</div>
+    <div class="elemento" id="steel">Steel</div>
+    <div class="elemento" id="fire">Fire</div>
+    <div class="elemento" id="water">Water</div>
+    <div class="elemento" id="grass">Grass</div>
+    <div class="elemento" id="electric">Electric</div>
+    <div class="elemento" id="psychic">Psychic</div>
+    <div class="elemento" id="ice">Ice</div>
+    <div class="elemento" id="dragon">Dragon</div>
+    <div class="elemento" id="dark">Dark</div>
+    <div class="elemento" id="fairy">Fairy</div>
+    <div class="elemento" id="unknown">Unknown</div>
+    <div class="elemento" id="shadow">Shadow</div>
+
+    <script>
+        // Objeto que contiene los degradados
+        const colores = {
+            normal: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #F5F5F5',
+            fighting: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #F28C6F',
+            flying: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #D5A6BD',
+            poison: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #D6A1B1',
+            ground: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #F7B7A3',
+            rock: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #D5B8A1',
+            bug: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #C2D6A1',
+            ghost: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #D0A8D3',
+            steel: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #D0D0D0',
+            fire: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #F5A97B',
+            water: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #A3C8E4',
+            grass: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #A8D5A2',
+            electric: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #F9E58F',
+            psychic: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #F8BBD0',
+            ice: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #A2D8E0',
+            dragon: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #C8A2D8',
+            dark: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #6E6E6E',
+            fairy: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #F6C1C0',
+            unknown: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #FFEBE8',
+            shadow: 'linear-gradient(180deg, rgba(255, 255, 255, 0.63) 0%, rgba(0, 0, 0, 0.63) 100%), #3A4D6E'
+        };
+
+        // Aplicar colores a los elementos correspondientes
+        for (const tipo in colores) {
+            document.getElementById(tipo).style.background = colores[tipo];
+        }
+    </script>
+
+</body>
+</html>

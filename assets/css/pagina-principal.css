@@ -1,35 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
-
 body {
-    background: linear-gradient(135deg, 
-        #2C3E50 0%, /* Azul oscuro */
-        #4CA1AF 50%, /* Azul claro */
-        #A2C2E0 100% /* Azul pálido */
-    );
+    background: linear-gradient(135deg,
+            #2C3E50 0%,
+            /* Azul oscuro */
+            #4CA1AF 50%,
+            /* Azul claro */
+            #A2C2E0 100%
+            /* Azul pálido */
+        );
     color: #FFF;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-
-main{
-    display: flex;
+main {
     margin: 20px;
 }
 
-
-.poke-container {
+.poke-container,
+.contenedor-pokemon {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    overflow: hidden;
+    /* Oculta el contenido que se desborda */
 }
+
 .pokemon {
-    width: 150px;
-    height: 200px;
+    border: solid 3px white;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -42,25 +43,133 @@ main{
 }
 
 .pokemon .info {
-    padding: 10px;
+    font: 600;
 }
 
-.number{
+.number,
+.numero {
     font-size: 15px;
     color: #000;
     font-family: "Roboto", sans-serif;
-
 }
-.name{
+
+.name,
+.nombre {
     font-size: 20px;
     color: #000;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
 }
 
-.type{
+.type,
+.tipo {
     font-size: 18px;
     color: #000;
     font-family: "Roboto", sans-serif;
+}
 
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 26px;
+    /* Adjusted to a single margin value for all sides */
+    width: auto;
+}
+
+.BOTON {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-sorprendeme {
+    background-color: orange;
+    /* Color naranja */
+    color: white;
+    /* Texto blanco */
+}
+
+.btn-filtro {
+    background-color: lightgray;
+    /* Color de fondo del botón Filtro */
+    color: black;
+    /* Texto negro */
+}
+
+.filter-options,
+.opciones-filtro {
+    display: none;
+    /* Inicialmente oculto */
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.6);
+    margin-right: 70px;
+    margin-bottom: 26px;
+    margin-left: 70px;
+    margin-top: -25px;
+}
+
+.filter-options select,
+.opciones-filtro select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.tipo-pildora {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: black;
+    margin-right: 5px;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.img-container {
+    border-radius: 10px;
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 8px;
+    margin: 0;
+    width: auto;
+    margin-right: 70px;
+    margin-bottom: 26px;
+    margin-left: 70px;
+}
+
+.boton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-sorprendeme {
+    background-color: orange;
+    color: white;
+}
+
+.btn-filtro {
+    background-color: lightgray;
+    color: black;
 }
