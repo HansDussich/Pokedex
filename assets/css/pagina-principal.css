@@ -144,7 +144,7 @@ main {
 
 .contenedor-botones {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     /* border: 1px solid #ccc; */
@@ -172,4 +172,42 @@ main {
 .btn-filtro {
     background-color: lightgray;
     color: black;
+}
+
+#search-container {
+    position: relative; /* Necesario para el posicionamiento absoluto de las sugerencias */
+}
+
+#suggestions-container {
+    position: absolute; /* Permitir que se superponga */
+    max-height: 150px; /* Altura máxima del contenedor */
+    overflow-y: auto; /* Habilitar la barra de desplazamiento vertical */
+    background-color: white; /* Fondo blanco para las sugerencias */
+    width: 100%; /* Ancho igual al input de búsqueda */
+    z-index: 1000; /* Asegúrate de que esté por encima e otros elementos */
+    border-radius: 1vh;
+}
+
+#suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#suggestions li {
+    padding: 8px;
+    cursor: pointer;
+    color: black;
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.boton_buscar {
+    padding: .5vh 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
 }
