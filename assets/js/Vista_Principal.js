@@ -1,6 +1,25 @@
 // Definición de los colores asociados a los tipos de Pokémon
 const colores = {
-    // ... (los colores que ya tienes)
+    normal: '#F5F5F5',
+    fighting: '#F28C6F',
+    flying: '#D5A6BD',
+    poison: '#D6A1B1',
+    ground: '#F7B7A3',
+    rock: '#D5B8A1',
+    bug: '#C2D6A1',
+    ghost: '#D0A8D3',
+    steel: '#D0D0D0',
+    fire: '#F5A97B',
+    water: '#A3C8E4',
+    grass: '#A8D5A2',
+    electric: '#F9E58F',
+    psychic: '#F8BBD0',
+    ice: '#A2D8E0',
+    dragon: '#C8A2D8',
+    dark: '#6E6E6E',
+    fairy: '#F6C1C0',
+    unknown: '#FFEBE8',
+    shadow: '#3A4D6E'
 };
 
 // Obtener los tipos de Pokémon
