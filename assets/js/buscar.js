@@ -3,9 +3,13 @@ let pokemonList = [];
 
 // Función para cargar los datos de la API
 async function fetchPokemon() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
-    const data = await response.json();
-    pokemonList = data.results.map(pokemon => pokemon.name); // Guardar solo los nombres
+    try {
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
+        const data = await response.json();
+        pokemonList = data.results.map(pokemon => pokemon.name); // Guardar solo los nombres
+    } catch (error) {
+        console.error("Error al cargar Pokémon:", error);
+    }
 }
 
 // Filtrar las sugerencias
@@ -39,7 +43,9 @@ function displaySuggestions(suggestions) {
 }
 
 // Evento de entrada en la barra de búsqueda
-document.getElementById('search').addEventListener('input', (event) => {
+const searchInput = document.getElementById('search');
+
+searchInput.addEventListener('input', (event) => {
     const query = event.target.value;
     if (query.length > 0) {
         filterSuggestions(query);
@@ -48,32 +54,28 @@ document.getElementById('search').addEventListener('input', (event) => {
     }
 });
 
+searchInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevenir el comportamiento por defecto
+        document.getElementById("Buscar").click(); // Simular clic en el botón de búsqueda
+    }
+});
+
 // Cargar datos al iniciar
 fetchPokemon();
 
+// Evento para botón de sorpresa
 document.getElementById("Sorpresa").addEventListener("click", function () {
-    // Generar un número aleatorio del 1 al 1008
-    const Pokemon = Math.floor(Math.random() * 1008) + 1;
-
-    // Guardar el número en localStorage
-    localStorage.setItem("pokemon_sorpresa", Pokemon);
-
-    // (Opcional) Mostrar el número generado en la consola
-    console.log("Número sorpresa guardado:", Pokemon);
-    // Redirigir a la página /pokemon.html
-    window.location.href = "/pokemon.html";
+    const Pokemon = Math.floor(Math.random() * 1008) + 1; // Generar un número aleatorio del 1 al 1008
+    localStorage.setItem("pokemon_sorpresa", Pokemon); // Guardar el número en localStorage
+    console.log("Número sorpresa guardado:", Pokemon); // Mostrar en consola
+    window.location.href = "/pokemon.html"; // Redirigir a la página /pokemon.html
 });
 
-
-
-
-
+// Evento para botón de búsqueda
 document.getElementById("Buscar").addEventListener("click", function (event) {
-    // Prevenir el comportamiento por defecto del botón de tipo submit
-    event.preventDefault();
-
-    // Obtener el valor del input
-    const busqueda = document.getElementById("search").value;
+    event.preventDefault(); // Prevenir el comportamiento por defecto del botón
+    const busqueda = document.getElementById("search").value; // Obtener el valor del input
 
     // Función para traer el Pokémon
     const traerPokemon = async (Pokemon) => {
@@ -83,17 +85,11 @@ document.getElementById("Buscar").addEventListener("click", function (event) {
             if (!res.ok) throw new Error('Error al obtener el Pokémon');
 
             const data = await res.json();
-            // Guardar el valor en localStorage solo si la búsqueda es exitosa
-            localStorage.setItem("pokemon_buscar", Pokemon);
-
-            // (Opcional) Mostrar el valor guardado en la consola
-            console.log("Pokémon Guardado:", Pokemon);
-
-            // Redirigir a la página /pokemon.html
-            window.location.href = "/pokemon.html";
+            localStorage.setItem("pokemon_buscar", Pokemon); // Guardar el valor en localStorage
+            console.log("Pokémon Guardado:", Pokemon); // Mostrar en consola
+            window.location.href = "/pokemon.html"; // Redirigir a la página /pokemon.html
         } catch (error) {
-            // Manejar el error, por ejemplo, mostrar un mensaje al usuario
-            console.error(error);
+            console.error(error); // Manejar el error
             alert("Pokémon no encontrado. Por favor, verifica el nombre.");
         }
     };
@@ -101,4 +97,3 @@ document.getElementById("Buscar").addEventListener("click", function (event) {
     // Llamar a la función para traer el Pokémon
     traerPokemon(busqueda);
 });
-
