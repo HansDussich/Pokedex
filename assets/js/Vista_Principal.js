@@ -33,18 +33,22 @@ const start = 25;
 // Función para obtener Pokémon desde la API
 const obtenerPokemones = async (start, limit) => {
     const promises = [];
-    for (let i = 1; i < start + limit; i++) {
+    for (let i = start; i < start + limit; i++) {
         promises.push(traerPokemon(i));
     }
     await Promise.all(promises);
 };
 
+
 // Función para traer un Pokémon específico
 const traerPokemon = async (id) => {
     try {
-        const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+        // Elimina los ceros a la izquierda del ID
+        const cleanedId = parseInt(id, 10); // Convierte a número entero
+        const url = `https://pokeapi.co/api/v2/pokemon/${cleanedId}`;
+        console.log('Fetching URL:', url);
         const res = await fetch(url);
-        if (!res.ok) throw new Error('Error al obtener el Pokémon');
+        if (!res.ok) throw new Error(`Error ${res.status}: ${res.statusText}`);
         const data = await res.json();
         crearTarjetaPokemon(data);
     } catch (error) {
@@ -52,13 +56,15 @@ const traerPokemon = async (id) => {
     }
 };
 
+
+
 // Función para crear una tarjeta para un Pokémon
 const crearTarjetaPokemon = (pokemon) => {
     const pokemonEl = document.createElement('div');
     pokemonEl.classList.add('pokemon');
 
     const nombre = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-    const id = pokemon.id.toString().padStart(3, '0');
+    const id = pokemon.id; // Usar el ID sin ceros a la izquierda
     const types = pokemon.types.map(type => type.type.name); // Obtener todos los tipos
 
     // Crear HTML para mostrar todos los tipos como píldoras
@@ -67,19 +73,19 @@ const crearTarjetaPokemon = (pokemon) => {
     `).join(' ');
 
     const pokemonInnerHTML = `
-    <a href="/pokemon.html" class="tarjeta link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-        <div class="img-container"> <!-- Sin asignar color aquí -->
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id}.png" alt="${pokemon.name}" style="width: 65%;">
+    <a href="/pokemon.html?id=${id}" class="tarjeta link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+        <div class="img-container">
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${String(id).padStart(3, '0')}.png" alt="${pokemon.name}" style="width: 65%;">
         </div>
         <div class="info">
-            <span class="number">#${id}</span>
+            <span class="number">#${String(id).padStart(3, '0')}</span>
             <h3 class="name">${nombre}</h3>
-            <small class="type">${tiposHTML}</small> <!-- Mostrar tipos como píldoras -->
+            <small class="type">${tiposHTML}</small>
         </div>
     </a>
     `;
 
-    pokemonEl.innerHTML = pokemonInnerHTML; // Asignar HTML al contenedor principal
+    pokemonEl.innerHTML = pokemonInnerHTML;
     contenedor.appendChild(pokemonEl);
 };
 
