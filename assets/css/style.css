@@ -1,0 +1,25 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.pokemon-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.stats-bar {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+}
+
+.stats-value {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.types-badge {
+    margin: 2px;
+}
