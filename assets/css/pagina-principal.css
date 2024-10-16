@@ -60,3 +60,22 @@ main{
     font-family: "Roboto", sans-serif;
 
 }
+
+.buttonRegistrese{
+    margin-right: 9px;
+    border-radius: 7px;
+    color: #1395af;
+    background-color: #212529;
+    border: solid #1395af 2px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.buttonRegistrese:hover{
+    background-color: #1395af;
+    color: black;
+}

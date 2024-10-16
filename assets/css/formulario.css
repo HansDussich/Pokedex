@@ -1,0 +1,12 @@
+body {
+    background-image: url('../image/pokemon.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(231, 4, 4, 0.685);
+}
