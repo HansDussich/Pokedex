@@ -61,27 +61,6 @@ main {
     font-family: "Roboto", sans-serif;
 }
 
-<<<<<<< HEAD
-}
-
-.buttonRegistrese{
-    margin-right: 9px;
-    border-radius: 7px;
-    color: #1395af;
-    background-color: #212529;
-    border: solid #1395af 2px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 5px;
-    padding-left: 5px;
-}
-
-.buttonRegistrese:hover{
-    background-color: #1395af;
-    color: black;
-=======
 .container2 {
     display: flex;
     justify-content: space-between;
@@ -297,5 +276,4 @@ main {
     #search-container {
         display: flex !important;
     }
->>>>>>> produccion
 }
