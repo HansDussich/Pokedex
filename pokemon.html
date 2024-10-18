@@ -10,28 +10,50 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    <link rel="stylesheet" href="/assets/css/style.css">
     
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark"
+            style="position: fixed; width: 100%; top: 0; z-index: 1000;">
             <div class="container-fluid">
-                <h1 class="navbar-brand mb-0">Detalles del Pokémon</h1>
+                <a class="navbar-brand d-flex align-items-center" href="/pagina-principal.html">
+                    <img src="assets/css/images/image (4).png" alt="logo pokemon" style="height: 7vh; width: auto;">
+                    <h1 class="ms-3 mb-0 fs-3" style="color: white;">POKÉ-VERSE</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                    <div id="search-container" class="d-flex">
+                        <button id="Sorpresa" class="btn btn-warning me-2">¡Sorpréndeme!</button>
+                        <input type="text" class="form-control me-2" style="border-radius: 10px;" id="search"
+                            placeholder="Buscar Pokémon..." />
+                        <div id="suggestions-container" style="top: 39px;">
+                            <ul id="suggestions"></ul>
+                        </div>
+                        <button class="search-button btn btn-primary" id="Buscar" type="submit">Buscar</button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
-    <main class="container my-5">
-        <div id="pokemon-details" class="pokemon-card">
-            <!-- Contenido cargado dinámicamente aquí -->
-        </div>
+    <main class="container my-5 pt-5">
+        <div id="pokemon-details" class="pokemon-card row"></div>
     </main>
 
-    <script src="/assets/js/pokemon.js">
 
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/pokemon.js"></script>
+    <script src="/assets/js/buscar.js"></script>
+    
+
 </body>
 
 </html>

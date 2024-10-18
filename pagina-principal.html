@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>POKEDEX</title>
+    <title>POKÉ-VERSE</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -18,47 +18,65 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark"
             style="position: fixed; width: 100%; top: 0; z-index: 1000;">
+
             <div class="container-fluid">
+
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="assets/css/images/image (4).png" alt="logo pokemon" style="height: 7vh; width: auto;">
-                    <h1 class="ms-3 mb-0" style="color: white;">Pokédex</h1>
+                    <h1 class="ms-3 mb-0 fs-3" style="color: white;">POKÉ-VERSE</h1>
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     </ul>
                     <div id="search-container" class="d-flex">
                         <button id="Sorpresa" class="btn btn-warning me-2">¡Sorpréndeme!</button>
+
+                        
                         <input type="text" class="form-control me-2" style="border-radius: 10px;" id="search"
                             placeholder="Buscar Pokémon..." />
+
                         <div id="suggestions-container" style="TOP: 39PX;">
                             <ul id="suggestions"></ul>
                         </div>
 
-                        <button class="search-button" id="Buscar" type="submit">Buscar</button>
+                        <button class="search-button btn btn-primary" id="Buscar" type="submit">Buscar</button>
+                        <button class="btn btn-info ms-2" data-bs-toggle="modal" data-bs-target="#formModal" ><a href="/formulario.html" style="text-decoration: none;">Llenar Formulario</a></button>
+
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
+
     <main style="margin-top: 100px; margin-bottom: 100px;">
         <div class="poke-container" id="poke-container"></div>
+
+        <nav aria-label="Page navigation" class="d-flex justify-content-center mt-4">
+            <ul class="pagination">
+                <li class="page-item "><button class="page-link" href="#" onclick="cargarPaginaAnterior()">Anterior</button></li>
+                <li class="page-item" id="pagina-1"><button class="page-link " href="#" onclick="irAPagina(1)">1</button></li>
+                <li class="page-item" id="pagina-2"><button class="page-link" href="#" onclick="irAPagina(2)">2</button></li>
+                <li class="page-item" id="pagina-3"><button class="page-link" href="#" onclick="irAPagina(3)">3</button></li>
+                <li class="page-item"><button class="page-link" href="#" onclick="cargarPaginaSiguiente()">Siguiente</button></li>
+            </ul>
+        </nav>
     </main>
 
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark text-white"
-        style="background: linear-gradient(135deg, #2C3E50 0%, #4CA1AF 50%, #2C3E50 100%);">
-        <div class="col-md-4 d-flex align-items-center">
-            <span class="mb-3 mb-md-0">© 2024 Creado por <a href="https://github.com/Camilo-romero-cruz"
-                    class="text-white text-decoration-none">Cesar Romero</a>, <a href="https://github.com/HansDussich"
-                    class="text-white text-decoration-none">Hans Dussich</a>, <a href="https://github.com/HansDussich"
-                    class="text-white text-decoration-none">Y Jhony</a>. Todos los derechos
-                reservados.</span>
+    <footer class="footer-custom py-3 text-white">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <span>© 2024 Creado por <a href="https://github.com/Camilo-romero-cruz" class="text-white text-decoration-none">Cesar Romero</a>, <a href="https://github.com/HansDussich" class="text-white text-decoration-none">Hans Dussich</a>, y <a href="https://github.com/HansDussich" class="text-white text-decoration-none">Jhonny Gonzalez</a>. Todos los derechos reservados.</span>
         </div>
     </footer>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

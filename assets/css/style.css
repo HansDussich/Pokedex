@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 body {
-    background-color: #f0f0f0;
+    background-image:  linear-gradient(to right top, #191654, #004483, #0071a0, #009cab, #43c6ac);
 }
 
 .pokemon-card {
@@ -22,4 +25,93 @@ body {
 
 .types-badge {
     margin: 2px;
+}
+
+
+#search-container {
+    position: relative;
+    /* Necesario para el posicionamiento absoluto de las sugerencias */
+}
+
+#suggestions-container {
+    position: absolute;
+    /* Permitir que se superponga */
+    max-height: 150px;
+    /* Altura máxima del contenedor */
+    overflow-y: auto;
+    /* Habilitar la barra de desplazamiento vertical */
+    background-color: white;
+    /* Fondo blanco para las sugerencias */
+    width: 100%;
+    /* Ancho igual al input de búsqueda */
+    z-index: 1000;
+    /* Asegúrate de que esté por encima e otros elementos */
+    border-radius: 1vh;
+}
+
+#suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#suggestions li {
+    padding: 8px;
+    cursor: pointer;
+    color: black;
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.boton_buscar {
+    padding: .5vh 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@media (max-width: 512px) {
+    .pokemon {
+        width: -webkit-fill-available;
+        border: solid 3px white;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+    }
+
+    #search-container {
+        display: none;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #343a40;
+        padding: 1rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 513px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    #search-container {
+        display: flex !important;
+    }
 }

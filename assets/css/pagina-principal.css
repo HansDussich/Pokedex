@@ -1,14 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
-    background: linear-gradient(135deg,
-            #2C3E50 0%,
-            /* Azul oscuro */
-            #4CA1AF 50%,
-            /* Azul claro */
-            #A2C2E0 100%
-            /* Azul pálido */
-        );
+    background-image: linear-gradient(to right top, #2c3e50, #35556a, #3c6d83, #43879a, #4ca1af);
     color: #FFF;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -172,6 +165,29 @@ main {
 .btn-filtro {
     background-color: lightgray;
     color: black;
+}
+
+.pagination {
+    gap: 0.5rem;
+}
+
+.page-item.active .page-link {
+    background-color: #4CA1AF;
+    border-color: #4CA1AF;
+}
+
+.page-item .page-link {
+    border-radius: 10px;
+    color: #4CA1AF;
+}
+
+.page-item .page-link:hover {
+    background-color: #2C3E50;
+    color: #FFF;
+}
+
+.footer-custom {
+    background: linear-gradient(135deg, #2C3E50 0%, #4CA1AF 50%, #2C3E50 100%);
 }
 
 #search-container {

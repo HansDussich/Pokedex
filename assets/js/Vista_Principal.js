@@ -25,10 +25,62 @@ const colores = {
 // Obtener los tipos de Pokémon
 const tipoPokemones = Object.keys(colores);
 const contenedor = document.getElementById('poke-container');
-let numeroPokemones = 0; // Controlar el número de Pokémon cargados
-const limite = 25; // Número de Pokémon a cargar por vezç
 
-const start = 25;
+let numeroPokemones = 0; // Controlar el número de Pokémon cargados
+
+
+
+let paginaActual = 1;
+const pokemonesPorPagina = 20;
+
+const cargarPaginaAnterior = () => {
+    if (paginaActual > 1) {
+        paginaActual--;
+        cargarPokemonesPorPagina();
+        actualizarPaginacion();
+    }
+};
+
+const cargarPaginaSiguiente = () => {
+    paginaActual++;
+    cargarPokemonesPorPagina();
+    actualizarPaginacion();
+};
+
+const irAPagina = (pagina) => {
+    if (pagina > 0) {
+        paginaActual = pagina;
+        cargarPokemonesPorPagina();
+        actualizarPaginacion();
+    }
+};
+
+const actualizarPaginacion = () => {
+    document.querySelectorAll('.pagination .page-item').forEach((item, index) => {
+        if (index > 0 && index < 4) {
+            const pageNum = paginaActual + index - 2;
+            if (pageNum > 0) {
+                item.querySelector('.page-link').textContent = pageNum;
+                item.classList.toggle('active', pageNum === paginaActual);
+                item.querySelector('.page-link').onclick = () => irAPagina(pageNum);
+                item.classList.remove('d-none');
+            } else {
+                item.classList.add('d-none');
+            }
+        }
+    });
+};
+
+const cargarPokemonesPorPagina = () => {
+    const start = (paginaActual - 1) * pokemonesPorPagina + 1;
+    contenedor.innerHTML = '';
+    obtenerPokemones(start, pokemonesPorPagina);
+};
+
+window.onload = () => {
+    cargarPokemonesPorPagina();
+    actualizarPaginacion();
+};
 
 // Función para obtener Pokémon desde la API
 const obtenerPokemones = async (start, limit) => {
@@ -90,12 +142,12 @@ const crearTarjetaPokemon = (pokemon) => {
 };
 
 // Función para manejar el scroll y cargar más Pokémon
-const manejarScroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) { // 100px antes de llegar al fondo
-        numeroPokemones += limite; // Aumentar el número de Pokémon a cargar
-        obtenerPokemones(numeroPokemones, limite); // Cargar más Pokémon
-    }
-};
+// const manejarScroll = () => {
+//     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) { // 100px antes de llegar al fondo
+//         numeroPokemones += limite; // Aumentar el número de Pokémon a cargar
+//         obtenerPokemones(numeroPokemones, limite); // Cargar más Pokémon
+//     }
+// };
 
 // Inicializar la carga de Pokémon
 const init = () => {
