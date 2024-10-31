@@ -110,7 +110,7 @@ const crearTarjetaPokemon = (pokemon) => {
     `).join(' ');
 
     pokemonEl.innerHTML = `
-    <a href="/Pokedex/pokemon-info.html?id=${id}" class="tarjeta link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+    <a href="/pokemon-info.html?id=${id}" class="tarjeta link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
         <div class="img-container">
             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${String(id).padStart(3, '0')}.png" alt="${pokemon.name}" style="width: 65%;">
         </div>
