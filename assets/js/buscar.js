@@ -51,7 +51,7 @@ function redirectToPokemonPage(pokemonName) {
     const pokemon = pokemonList.find(p => p.name === pokemonName.toLowerCase());
     if (pokemon) {
         // Redirigir a la página del Pokémon
-        window.location.href = `/pokemon.html?name=${pokemonName.toLowerCase()}`;
+        window.location.href = `/Pokedex/pokemon-info.html?name=${pokemonName.toLowerCase()}`;
     } else {
         alert('Pokémon no encontrado. Por favor, verifica el nombre.');
     }
@@ -77,7 +77,7 @@ document.getElementById('Buscar').addEventListener('click', (event) => {
 // Evento de clic para el botón "¡Sorpréndeme!"
 document.getElementById('Sorpresa').addEventListener('click', function () {
     const randomId = Math.floor(Math.random() * 1008) + 1;
-    window.location.href = `/pokemon.html?id=${randomId}`;
+    window.location.href = `/Pokedex/pokemon-info.html?id=${randomId}`;
 });
 
 // Cargar datos al iniciar
