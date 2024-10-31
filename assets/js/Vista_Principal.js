@@ -22,17 +22,12 @@ const colores = {
     shadow: '#3A4D6E'
 };
 
-// Obtener los tipos de Pokémon
-const tipoPokemones = Object.keys(colores);
+// Elementos y configuración de la paginación
 const contenedor = document.getElementById('poke-container');
-
-let numeroPokemones = 0; // Controlar el número de Pokémon cargados
-
-
-
 let paginaActual = 1;
 const pokemonesPorPagina = 20;
 
+// Funciones de navegación de página
 const cargarPaginaAnterior = () => {
     if (paginaActual > 1) {
         paginaActual--;
@@ -71,61 +66,51 @@ const actualizarPaginacion = () => {
     });
 };
 
+// Cargar Pokémon por página
 const cargarPokemonesPorPagina = () => {
     const start = (paginaActual - 1) * pokemonesPorPagina + 1;
     contenedor.innerHTML = '';
     obtenerPokemones(start, pokemonesPorPagina);
 };
 
-window.onload = () => {
-    cargarPokemonesPorPagina();
-    actualizarPaginacion();
-};
-
-// Función para obtener Pokémon desde la API
+// Función para obtener Pokémon desde la API en orden
 const obtenerPokemones = async (start, limit) => {
-    const promises = [];
+    const pokemonesData = [];
     for (let i = start; i < start + limit; i++) {
-        promises.push(traerPokemon(i));
+        pokemonesData.push(await traerPokemon(i));
     }
-    await Promise.all(promises);
+    pokemonesData.forEach(pokemon => {
+        if (pokemon) crearTarjetaPokemon(pokemon);
+    });
 };
-
 
 // Función para traer un Pokémon específico
 const traerPokemon = async (id) => {
     try {
-        // Elimina los ceros a la izquierda del ID
-        const cleanedId = parseInt(id, 10); // Convierte a número entero
-        const url = `https://pokeapi.co/api/v2/pokemon/${cleanedId}`;
-        console.log('Fetching URL:', url);
+        const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
         const res = await fetch(url);
         if (!res.ok) throw new Error(`Error ${res.status}: ${res.statusText}`);
-        const data = await res.json();
-        crearTarjetaPokemon(data);
+        return await res.json();
     } catch (error) {
         console.error(`No se pudo obtener el Pokémon con ID ${id}: ${error}`);
+        return null;
     }
 };
 
-
-
-// Función para crear una tarjeta para un Pokémon
+// Crear tarjeta de Pokémon
 const crearTarjetaPokemon = (pokemon) => {
     const pokemonEl = document.createElement('div');
     pokemonEl.classList.add('pokemon');
-
+    
     const nombre = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-    const id = pokemon.id; // Usar el ID sin ceros a la izquierda
-    const types = pokemon.types.map(type => type.type.name); // Obtener todos los tipos
-
-    // Crear HTML para mostrar todos los tipos como píldoras
-    const tiposHTML = types.map(type => `
-        <span class="tipo-pildora" style="background-color: ${colores[type]};">${type}</span>
+    const id = pokemon.id;
+    
+    const tiposHTML = pokemon.types.map(type => `
+        <span class="tipo-pildora" style="background-color: ${colores[type.type.name]};">${type.type.name}</span>
     `).join(' ');
 
-    const pokemonInnerHTML = `
-    <a href="/pokemon.html?id=${id}" class="tarjeta link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+    pokemonEl.innerHTML = `
+    <a href="/Pokedex/pokemon-info.html?id=${id}" class="tarjeta link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
         <div class="img-container">
             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${String(id).padStart(3, '0')}.png" alt="${pokemon.name}" style="width: 65%;">
         </div>
@@ -137,26 +122,22 @@ const crearTarjetaPokemon = (pokemon) => {
     </a>
     `;
 
-    pokemonEl.innerHTML = pokemonInnerHTML;
+    // Agregar el evento de clic
+    pokemonEl.addEventListener('click', () => {
+        // Guardar el ID del Pokémon en Local Storage
+        localStorage.setItem('pokemonId', id);
+        
+        // Recuperar y mostrar el ID del Pokémon en la consola
+        const pokemonId = localStorage.getItem('pokemonId');
+        console.log(pokemonId);
+    });
+
     contenedor.appendChild(pokemonEl);
 };
 
-// Función para manejar el scroll y cargar más Pokémon
-// const manejarScroll = () => {
-//     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) { // 100px antes de llegar al fondo
-//         numeroPokemones += limite; // Aumentar el número de Pokémon a cargar
-//         obtenerPokemones(numeroPokemones, limite); // Cargar más Pokémon
-//     }
-// };
-
-// Inicializar la carga de Pokémon
-const init = () => {
-    obtenerPokemones(numeroPokemones, limite); // Carga inicial
-    window.addEventListener('scroll', manejarScroll); // Escuchar el evento de scroll
-};
 
 // Iniciar la aplicación
-init();
-
-
-
+window.onload = () => {
+    cargarPokemonesPorPagina();
+    actualizarPaginacion();
+};
