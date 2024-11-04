@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>POKÉ-VERSE</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha3x84-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/css/pagina-principal.css">
     <style>
@@ -19,11 +18,11 @@
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark"
             style="position: fixed; width: 100%; top: 0; z-index: 1000;">
 
-            <div class="container-fluid">
+            <div class="container-fluid ">
 
-                <a class="navbar-brand d-flex align-items-center" href="#">
+                <a class="navbar-brand d-flex align-items-center nav-title" href="#">
                     <img src="assets/css/images/image (4).png" alt="logo pokemon" style="height: 7vh; width: auto;">
-                    <h1 class="ms-3 mb-0 fs-3" style="color: white;">POKÉ-VERSE</h1>
+                    <h1 class="ms-3 mb-0 fs-3 titulo" style="color: white;">POKE-VERSE</h1>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -35,17 +34,18 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     </ul>
                     <div id="search-container" class="d-flex">
-                        <button id="Sorpresa" class="btn btn-warning me-2">¡Sorpréndeme!</button>
+                        <button id="Sorpresa" class="btn btn-warning me-2 btn-sorprendeme">¡Sorpréndeme!</button>
 
                         
-                        <input type="text" class="form-control me-2" style="border-radius: 10px;" id="search"
+                        <input type="text" class="form-control me-2 input-buscar" style="border-radius: 10px;" id="search"
                             placeholder="Buscar Pokémon..." />
 
                         <div id="suggestions-container" style="TOP: 39PX;">
                             <ul id="suggestions"></ul>
                         </div>
 
-                        <button class="search-button btn btn-primary" id="Buscar" type="submit">Buscar</button>
+                        <button class="search-button btn btn-primary btn-buscar" id="Buscar" type="submit">Buscar</button>
+                        <button class="btn btn-info ms-2 btn-inscripcion" onclick="location.href='/formulario.html'" >Inscripción</button>
 
                     </div>
                 </div>
@@ -53,17 +53,18 @@
         </nav>
     </header>
 
+    
 
-    <main style="margin-top: 100px; ">
+    <main style="margin-top: 100px; margin-bottom: 100px;">
         <div class="poke-container" id="poke-container"></div>
 
         <nav aria-label="Page navigation" class="d-flex justify-content-center mt-4">
             <ul class="pagination">
-                <li class="page-item "><button class="page-link" href="#" onclick="cargarPaginaAnterior()">Anterior</button></li>
+                <li class="page-item"><button class="page-link" onclick="cargarPaginaAnterior()">&laquo; Anterior</button></li>
                 <li class="page-item" id="pagina-1"><button class="page-link " href="#" onclick="irAPagina(1)">1</button></li>
                 <li class="page-item" id="pagina-2"><button class="page-link" href="#" onclick="irAPagina(2)">2</button></li>
                 <li class="page-item" id="pagina-3"><button class="page-link" href="#" onclick="irAPagina(3)">3</button></li>
-                <li class="page-item"><button class="page-link" href="#" onclick="cargarPaginaSiguiente()">Siguiente</button></li>
+                <li class="page-item"><button class="page-link" onclick="cargarPaginaSiguiente()">Siguiente &raquo;</button></li>
             </ul>
         </nav>
     </main>
@@ -77,11 +78,11 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
     <script src="assets/js/Vista_Principal.js"></script>
-    <script src="/Pokedex/assets/js/buscar.js"></script>
+    <script src="/assets/js/buscar.js"></script>
     <script>
     </script>
 </body>

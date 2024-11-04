@@ -1,15 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
 body {
-    background-image:  linear-gradient(to right top, #191654, #004483, #0071a0, #009cab, #43c6ac);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
+/* Fondo animado */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.titulo {
+    font-family: "Pixelify Sans", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+
+.btn-sorprendeme:hover {
+    background-color: #ffca2c;
+    transform: scale(1.05);
+}
+
+.btn-filtro {
+    background-color: lightgray;
+    color: black;
+}
+
+.btn-buscar:hover {
+    background-color: #094196;
+    transform: scale(1.05);
+}
+
+
+.btn-inscripcion:hover{
+    background-color: #194485;
+    color: #FFF;
+    transform: scale(1.05);
+}
+
+
+
 .pokemon-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    top: 1000vh;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
 }
 
 .stats-bar {
@@ -27,6 +79,27 @@ body {
     margin: 2px;
 }
 
+
+.btn-sorprendeme:hover {
+    background-color: #ffca2c;
+    transform: scale(1.05);
+}
+
+.btn-filtro {
+    background-color: lightgray;
+    color: black;
+}
+
+.btn-buscar:hover {
+    background-color: #094196;
+    transform: scale(1.05);
+}
+
+
+.btn-inscripcion:hover{
+    background-color: #194485;
+    transform: scale(1.05);
+}
 
 #search-container {
     position: relative;
@@ -56,10 +129,10 @@ body {
 }
 
 #suggestions li {
-    padding: 8px;
-    cursor: pointer;
-    color: black;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
+
 
 #suggestions li:hover {
     background-color: #f0f0f0;
@@ -72,6 +145,230 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
+
+
+@media (max-width: 800px) {
+    .nav-title {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 800px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #343a40;
+        padding: 1rem;
+        z-index: 1000;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #search-container {
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .input-buscar {
+        min-width: 200px;
+    }
+}
+
+@media (min-width: 571px) and (max-width: 700px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand img {
+        height: 40px !important;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #343a40;
+        padding: 1rem;
+        z-index: 1000;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #search-container {
+        width: 100%;
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .input-buscar {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .btn-sorprendeme,
+    .btn-buscar,
+    .btn-inscripcion {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* Media query para dispositivos pequeños */
+@media (max-width: 570px) {
+    
+    .navbar {
+        padding: 0.5rem;
+        
+    }
+    .container-fluid{
+        
+        width: auto;
+        gap: 10em;
+    }
+
+    .navbar-brand {
+        margin-right: 0;
+    }
+
+    .navbar-brand img {
+        height: 35px !important;
+    }
+
+    .navbar-brand h1 {
+        font-size: 1.2rem !important;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #343a40;
+        padding: 1rem;
+        z-index: 1000;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #search-container {
+        width: 100%;
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .input-buscar {
+        width: 100%;
+    }
+
+    .btn-sorprendeme,
+    .btn-buscar,
+    .btn-inscripcion {
+        width: 100%;
+        padding: 8px 16px;
+        margin: 0 !important;
+    }
+
+    #suggestions-container {
+        width: 100%;
+        left: 0;
+    }
+}
+
+
+
+/* Ajustes específicos para el contenedor de búsqueda en dispositivos medianos */
+@media (min-width: 571px) and (max-width: 700px) {
+    #search-container {
+        justify-content: flex-end;
+    }
+
+    .navbar-collapse.show #search-container {
+        justify-content: center;
+    }
+
+    .btn-inscripcion {
+        margin-left: 8px !important;
+    }
+}
+
+
+
+/* Ajustes de navegación para pantallas más grandes */
+@media (min-width: 751px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-collapse {
+        display: flex !important;
+    }
+
+    #search-container {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+
+/* Estilos adicionales para mejorar la usabilidad en móvil */
+@media (max-width: 570px) {
+    .navbar{
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    
+    #suggestions-container {
+        
+        margin-top: 55px;
+    }
+    
+}
+
+/* Ajustes para la navegación en modo landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .navbar {
+        position: relative !important;
+    }
+
+    .navbar-collapse {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+@media (max-width:450px) {
+
+    .container-fluid{   
+        width: auto;
+        gap: 3em;
+    }
+}
+
+
+
+
+
 
 @media (max-width: 512px) {
     .pokemon {
@@ -88,30 +385,29 @@ body {
         font-family: 'Arial', sans-serif;
     }
 
-    #search-container {
-        display: none;
-    }
 
-    .navbar-collapse {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #343a40;
-        padding: 1rem;
-    }
+}
 
-    .navbar-nav {
+@media (max-width: 800px) {
+    .pokemon {
+        width: -webkit-fill-available;
+        border: solid 3px white;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
     }
 }
 
-@media (min-width: 513px) {
-    .navbar-toggler {
-        display: none;
-    }
 
-    #search-container {
-        display: flex !important;
+@media (min-width: 751px) {
+    main {
+        padding-top: 70px;
     }
+    
 }

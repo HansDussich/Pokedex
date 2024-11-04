@@ -1,6 +1,10 @@
 // Almacenar los nombres de los Pokémon y sus URLs
 let pokemonList = [];
 
+// Referencia al botón de "¡Sorpréndeme!"
+const sorpresaButton = document.getElementById('Sorpresa');
+sorpresaButton.disabled = true; // Deshabilitar al inicio
+
 // Función para cargar los datos de la API
 async function fetchPokemon() {
     try {
@@ -10,6 +14,7 @@ async function fetchPokemon() {
             name: pokemon.name,
             url: pokemon.url
         }));
+        sorpresaButton.disabled = false; // Habilitar el botón cuando se carga la lista
     } catch (error) {
         console.error('Error al obtener la lista de Pokémon:', error);
     }
@@ -51,7 +56,7 @@ function redirectToPokemonPage(pokemonName) {
     const pokemon = pokemonList.find(p => p.name === pokemonName.toLowerCase());
     if (pokemon) {
         // Redirigir a la página del Pokémon
-        window.location.href = `/pokemon-info.html?name=${pokemonName.toLowerCase()}`;
+        window.location.href = `/pokemon.html?name=${pokemonName.toLowerCase()}`;
     } else {
         alert('Pokémon no encontrado. Por favor, verifica el nombre.');
     }
@@ -75,9 +80,9 @@ document.getElementById('Buscar').addEventListener('click', (event) => {
 });
 
 // Evento de clic para el botón "¡Sorpréndeme!"
-document.getElementById('Sorpresa').addEventListener('click', function () {
+sorpresaButton.addEventListener('click', function () {
     const randomId = Math.floor(Math.random() * 1008) + 1;
-    window.location.href = `/pokemon-info.html?id=${randomId}`;
+    window.location.href = `/pokemon.html?id=${randomId}`;
 });
 
 // Cargar datos al iniciar
