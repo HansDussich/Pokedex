@@ -40,12 +40,30 @@ const mostrarDetalles = (pokemon, species) => {
         speed: pokemon.stats[5].base_stat,
     };
 
+    // Generar HTML para mostrar los tipos en formato de píldora con iconos
+    const tiposHTML = types.map(type => {
+        const backgroundColor = colores[type];
+        const textColor = esColorOscuro(backgroundColor) ? '#FFFFFF' : '#000000';
+        
+        return `
+            <span class="tipo-pildora" 
+                  style="background-color: ${backgroundColor}; color: ${textColor}; padding: 5px 10px; border-radius: 15px; display: inline-flex; align-items: center; margin-right: 5px;">
+                <img src="assets/icons/${type}.svg" 
+                     alt="${type} icon" 
+                     class="tipo-icon" 
+                     style="width: 16px; height: 16px; margin-right: 5px; filter: ${textColor === '#000000' ? 'brightness(0)' : 'brightness(100)'};"> 
+                ${type.charAt(0).toUpperCase() + type.slice(1)}
+            </span>
+        `;
+    }).join(' ');
+    
+
     const detallesHTML = `
         <div class="col-md-6 text-center" style="background-color: ${color}; border-radius: 10px; padding: 20px;">
             <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id}.png" alt="${pokemon.name}" class="img-fluid" style="max-width: 200px;">
             <h2>${nombre} (#${id})</h2>
             <p class="text-muted"><strong>Descripción:</strong> ${description}</p>
-            <p><strong>Tipos:</strong> ${types.join(', ')}</p>
+            <p><strong>Tipos:</strong> ${tiposHTML}</p>
             <p><strong>Peso:</strong> ${pokemon.weight / 10} kg | <strong>Altura:</strong> ${pokemon.height / 10} m</p>
             <p><strong>Habilidades:</strong> ${pokemon.abilities.map(a => a.ability.name).join(', ')}</p>
         </div>
@@ -64,6 +82,17 @@ const mostrarDetalles = (pokemon, species) => {
 
     document.getElementById('pokemon-details').innerHTML = detallesHTML;
 };
+
+// Función para determinar si el color de fondo es oscuro
+const esColorOscuro = (color) => {
+    const hex = color.replace('#', '');
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+    return luminance < 140;
+};
+
 
 if (pokemonId) {
     obtenerDetallesPokemon(pokemonId);

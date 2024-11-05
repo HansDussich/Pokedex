@@ -8,7 +8,7 @@ sorpresaButton.disabled = true; // Deshabilitar al inicio
 // Función para cargar los datos de la API
 async function fetchPokemon() {
     try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?    limit=100000&offset=0');
         const data = await response.json();
         pokemonList = data.results.map(pokemon => ({
             name: pokemon.name,

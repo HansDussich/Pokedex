@@ -86,7 +86,7 @@ main {
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 26px;
-    /* Adjusted to a single margin value for all sides */
+
     width: auto;
 }
 
@@ -188,35 +188,36 @@ main {
 .page-item.active .page-link {
     background-color: #4CA1AF;
     border-color: #4CA1AF;
+    color: #000;
 }
 
 .page-item .page-link {
     border-radius: 10px;
-    color: #4CA1AF;
+    color: #153338;
 }
 
 .page-item .page-link:hover {
-    background-color: #2C3E50;
+    background-color: #111f2e;
     color: #FFF;
 }
 
+.pagination .page-link {
+    font-size: 1.1rem;
+    border: 1px solid #ddd;
+}
 
 #search-container {
     position: relative;
-    /* Necesario para el posicionamiento absoluto de las sugerencias */
+    
 }
 
 #suggestions-container {
     position: absolute;
-    /* Permitir que se superponga */
     max-height: 150px;
-    /* Altura máxima del contenedor */
     overflow-y: auto;
     /* Habilitar la barra de desplazamiento vertical */
     background-color: white;
-    /* Fondo blanco para las sugerencias */
     width: 100%;
-    /* Ancho igual al input de búsqueda */
     z-index: 1000;
     /* Asegúrate de que esté por encima e otros elementos */
     border-radius: 1vh;
@@ -414,7 +415,6 @@ main {
     }
 }
 
-/* Ajustes específicos para el contenedor de búsqueda en dispositivos medianos */
 @media (min-width: 571px) and (max-width: 700px) {
     #search-container {
         justify-content: flex-end;
@@ -467,7 +467,7 @@ main {
     margin-top: 5px;
 }
 
-/* Estilos adicionales para mejorar la usabilidad en móvil */
+
 @media (max-width: 570px) {
     .navbar{
         width: auto;
@@ -526,9 +526,8 @@ main {
         width: auto;
         gap: 3em;
     }
+    .page-link{
+        font-size: 1rem;
+    }
 }
-
-
-
-
 
